@@ -17,13 +17,14 @@ enum guildStructure{
     DCC_Channel:gs_main_channel
 }
 
-native format(output[], len = sizeof (output), const format[], {Float, _}:...);
 
 #define main_channel_name    "pawn-bot"
 
+main(){}
 
 forward OnFilterScriptInit();
 forward OnFilterScriptExit();
+native format(output[], len = sizeof (output), const format[], {Float, _}:...);
 
 
 public OnFilterScriptInit(){
@@ -39,7 +40,6 @@ public OnFilterScriptExit(){
     DB_Close(globalDatabase);
 }
 
-main(){}
 
 sendInitMessage(){
     for(new p; p < pool_size(globalGuildPool); p++){
