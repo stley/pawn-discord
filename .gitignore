@@ -1,0 +1,8 @@
+*.json
+*.exe
+*.dll
+*.pdb
+log.txt
+build/
+components/
+logs/
