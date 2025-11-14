@@ -6,3 +6,5 @@ log.txt
 build/
 components/
 logs/
+scriptfiles/pawnbot.db
+include/omp-database.inc
