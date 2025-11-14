@@ -54,7 +54,7 @@ sendInitMessage(){
         DCC_GetGuildId(DCC_Guild:map_get(tempGuild, gs_guildID), thisGuild);
         DCC_GetUserId(DCC_User:map_get(tempGuild, gs_guildOwner), guildown);
         DCC_GetChannelId(DCC_Channel:map_get(tempGuild, gs_main_channel), thisChannel);
-        format(msg, sizeof msg, "Oso pínche joto alv >:v | Owner: <@!%s> | Guild ID: %s | Este canal tiene el ID: %s", guildown, thisGuild, thisChannel);
+        format(msg, sizeof msg, "Owner: <@!%s> | Guild ID: %s | Este canal tiene el ID: %s", guildown, thisGuild, thisChannel);
         DCC_SendChannelMessage(DCC_Channel:map_get(tempGuild, gs_main_channel), msg);
         continue;
     }
