@@ -1,0 +1,28 @@
+{
+    "discord": {
+        "bot_token": "YOUR_BOT_TOKEN_HERE"
+    },
+    "logging": {
+        "enable": true,
+        "file": "log.txt",
+        "log_chat": true,
+        "log_connection_messages": true,
+        "log_cookies": false,
+        "log_deaths": true,
+        "log_queries": false,
+        "log_sqlite": false,
+        "log_sqlite_queries": false,
+        "timestamp_format": "[%Y-%m-%dT%H:%M:%S%z]",
+        "use_prefix": true,
+        "use_timestamp": true
+    },
+    "pawn": {
+        "legacy_plugins": [
+            "PawnPlus"
+        ],
+        "main_scripts": [],
+        "side_scripts": []
+    },
+    "sleep": 5.0,
+    "use_dyn_ticks": true
+}
