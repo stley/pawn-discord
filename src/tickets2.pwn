@@ -10,7 +10,6 @@ Thanks to:
 
 #include <default>
 #include <float>
-#include <omp-database>
 #include <string>
 #define PP_SYNTAX_AWAIT
 #include <PawnPlus>
