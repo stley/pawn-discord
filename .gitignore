@@ -1,4 +1,5 @@
 *.json
+!config-default.json
 *.exe
 *.dll
 *.pdb
@@ -7,4 +8,4 @@ build/
 components/
 logs/
 scriptfiles/pawnbot.db
-include/omp-database.inc
+!include/omp-database.inc
