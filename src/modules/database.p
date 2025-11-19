@@ -21,6 +21,7 @@ databaseInit(){
         mysql_error(err);
         printf("Failed to connect to MySQL database: %s.", err);
     }
+    mysql_log(ALL);
     return 1;
 }
 

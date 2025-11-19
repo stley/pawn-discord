@@ -6,41 +6,44 @@ Thanks to:
     - open.mp development team, The - for making such a customizable and modular binary
 */
 
-#define FILTERSCRIPT
-
-#include <default>
-#include <float>
-#include <string>
+#include <pawn-discord>
 #define PP_SYNTAX_AWAIT
 #include <PawnPlus>
-#include <discord-connector>
 #include <a_mysql>
 #define MYSQL_ASYNC_DEFAULT_PARALLEL true
 #include <pp-mysql>
-
-native format(output[], len = sizeof (output), const format[], {Float, _}:...);
 #include <strlib>
+#pragma option -d3
 
 
 #include "../src/modules/database.p"
 #include "../src/modules/guild.p"
 #include "../src/modules/ticket.p"
 
-forward OnFilterScriptInit();
-forward OnFilterScriptExit();
+
+static saveTimer;
 
 main(){}
 
+
+
 public OnFilterScriptInit(){
+    saveTimer = SetTimer("saveGuilds", 900000, true);
     globalGuildPool = pool_new();
+    guildCommandsList = list_new();
     databaseInit();
     loadGuilds();
+    loadTickets();
     return 1;
 }
 
 public OnFilterScriptExit(){
-    saveGuilds();
+    KillTimer(saveTimer);
     pool_delete_deep(globalGuildPool);
+    list_delete_deep(guildCommandsList);
     databaseExit();
     return 1;
 }
+
+
+#undef FILTERSCRIPT
